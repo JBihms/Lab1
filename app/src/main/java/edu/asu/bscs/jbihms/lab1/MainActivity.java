@@ -2,17 +2,21 @@ package edu.asu.bscs.jbihms.lab1;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);  //calls parent
+        setContentView(R.layout.activity_main); //R is generated when built, sets the content view from the xml file (deseralization), creates the UI objects then loads the objects (view group objects) for the view
     }
+
+
 
 
     @Override
@@ -36,4 +40,48 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+      public void onRestart(){
+        super.onRestart();
+        Log.d(getClass().getSimpleName(), "onRestart");
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d(getClass().getSimpleName(), "onStart");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.d(getClass().getSimpleName(), "onResume");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        Log.d(getClass().getSimpleName(), "onPause");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        Log.d(getClass().getSimpleName(), "onStop");
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        Log.d(getClass().getSimpleName(), "onDestroy");
+    }
+
+    public void startDialog(View v){
+        
+    }
+
+
+
+
 }
