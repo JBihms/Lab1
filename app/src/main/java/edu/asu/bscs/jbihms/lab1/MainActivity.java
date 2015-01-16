@@ -1,22 +1,27 @@
 package edu.asu.bscs.jbihms.lab1;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    TextView helloTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  //calls parent
         setContentView(R.layout.activity_main); //R is generated when built, sets the content view from the xml file (deseralization), creates the UI objects then loads the objects (view group objects) for the view
+        helloTV = (TextView) findViewById(R.id.helloTV);
+
     }
-
-
 
 
     @Override
@@ -77,11 +82,22 @@ public class MainActivity extends ActionBarActivity {
         Log.d(getClass().getSimpleName(), "onDestroy");
     }
 
-    public void startDialog(View v){
-        
+        /*
+        When the user click the Click Me button do the following!
+        */
+    public void startDialog(View v) {
+        android.util.Log.w("ActivityMain", "called startDialog()");
+        Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+        startActivity(intent);
+
     }
 
+    public void showTime(View v){
+        android.util.Log.w("ActivityMain", "called startDialog()");
+        String curr = DateFormat.getDateTimeInstance().format(new Date());
 
+        helloTV.setText(curr);
+    }
 
 
 }

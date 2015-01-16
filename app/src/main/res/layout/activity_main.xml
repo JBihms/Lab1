@@ -12,11 +12,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/startDialog"
-        android:layout_below="@id/helloTV"
+        android:text="@string/clickme"
         android:onClick="startDialog"
-        />
+        android:id="@+id/button"
+        android:layout_below="@+id/helloTV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/showtime"
+        android:onClick="showTime"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
